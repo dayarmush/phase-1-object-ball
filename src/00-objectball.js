@@ -146,16 +146,25 @@ console.log(shoeSize('brookLopez'))
 
 const teamColor = (teamsColor) =>  {
     let game = gameObject();
-    debugger
     for (let team in game) {
-        debugger
         let teamObj = game[team];
-        debugger
             if(teamObj.teamName === teamsColor) {
-                debugger
             return teamObj.color;
             }
     }
 }
 
 console.log(teamColor('brooklynNets'))
+
+function teamNames() {
+    let arr = [];
+    let game = gameObject();
+    for (let team in game) {
+        arr.push(game[team].teamName)
+        if (arr.length === 2) {
+            return arr
+        }
+    }
+}
+
+console.log(teamNames())
