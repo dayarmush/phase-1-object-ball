@@ -185,3 +185,18 @@ const playersNumbers = (teamName) => {
 
 console.log(playersNumbers('charlotteHornets'))
 
+function playerStats(player) {
+    let stats = {};
+    let game = gameObject();
+    for (let team in game) {
+        let teamObj = game[team].Players;
+        for (let playerObj in teamObj) {
+            if (playerObj === player) {
+                stats = teamObj[playerObj]
+                return stats
+            }
+        }
+    }
+}
+
+console.log(playerStats('alanAnderson'))
