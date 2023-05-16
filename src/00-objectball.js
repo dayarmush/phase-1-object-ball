@@ -200,3 +200,25 @@ function playerStats(player) {
 }
 
 console.log(playerStats('alanAnderson'))
+
+function bigShoeRebounds() {
+    let game = gameObject();
+    let biggestShoe = null;
+    for (let teamObj in game) {
+      let player = game[teamObj].Players;
+      for (let stats in player) {
+        if (biggestShoe === null || player[stats].shoe > biggestShoe.shoe) {
+          biggestShoe = player[stats];
+        }
+      }
+    }
+    
+    if (biggestShoe !== null) {
+      return biggestShoe.rebounds;
+    }
+    
+    return null;
+  }
+  
+  console.log(bigShoeRebounds());
+  
