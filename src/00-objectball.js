@@ -168,3 +168,20 @@ function teamNames() {
 }
 
 console.log(teamNames())
+
+const playersNumbers = (teamName) => {
+    let arr = [];
+    let game = gameObject();
+    for (let team in game) {
+        if (game[team].teamName === teamName) {
+            let teamObj = game[team].Players;
+            for (let info in teamObj) {
+                arr.push(teamObj[info].points)
+               }
+            }
+        }
+    return arr;
+}
+
+console.log(playersNumbers('charlotteHornets'))
+
